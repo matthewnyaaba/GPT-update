@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GenAI-ERA Assistant</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>🌍 GenAI-ERA Multimodal Assistant</h1>
+            <label class="switch">
+              <input type="checkbox" id="themeToggle">
+              <span class="slider round"></span>
+            </label>
+        </header>
+        <section id="interaction">
+            <select id="languageSelect">
+                <option value="English">English</option>
+                <option value="French">French</option>
+            </select>
+            <textarea id="promptInput" placeholder="Ask anything..."></textarea>
+            <button onclick="sendPrompt()">Send</button>
+            <button onclick="startRecording()">🎙️</button>
+            <button onclick="stopRecording()">⏹️</button>
+            <input type="file" id="fileUpload">
+        </section>
+        <section id="responseBox">AI response will appear here...</section>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
