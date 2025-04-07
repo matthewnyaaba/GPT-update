@@ -1,31 +1,65 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>GenAI-ERA Assistant</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <title>GPT-4o Assistant</title>
+    <style>
+        body {
+            background-color: #1e1e2f;
+            color: white;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+        }
+        #chatContainer {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        .message {
+            max-width: 80%;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 12px;
+            line-height: 1.4;
+        }
+        .user { background-color: #00796b; align-self: flex-end; }
+        .bot { background-color: #37474f; align-self: flex-start; }
+        #inputArea {
+            display: flex;
+            padding: 10px;
+            background: #263238;
+        }
+        textarea {
+            flex: 1;
+            border-radius: 8px;
+            padding: 10px;
+            border: none;
+            resize: none;
+        }
+        button {
+            margin-left: 10px;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 8px;
+            background-color: #00c37a;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <div id="app">
-        <header>
-            <h1>🌍 GenAI-ERA Multimodal Assistant</h1>
-            <label class="switch">
-              <input type="checkbox" id="themeToggle">
-              <span class="slider round"></span>
-            </label>
-        </header>
-        <section id="interaction">
-            <select id="languageSelect">
-                <option value="English">English</option>
-                <option value="French">French</option>
-            </select>
-            <textarea id="promptInput" placeholder="Ask anything..."></textarea>
-            <button onclick="sendPrompt()">Send</button>
-            <button onclick="startRecording()">🎙️</button>
-            <button onclick="stopRecording()">⏹️</button>
-            <input type="file" id="fileUpload">
-        </section>
-        <section id="responseBox">AI response will appear here...</section>
+    <div id="chatContainer"></div>
+    <div id="inputArea">
+        <textarea id="promptInput" placeholder="Type or speak your message..."></textarea>
+        <button onclick="sendPrompt()">Send</button>
+        <button onclick="startListening()">🎤</button>
     </div>
     <script src="/static/script.js"></script>
 </body>
